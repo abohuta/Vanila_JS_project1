@@ -1,56 +1,174 @@
-html {
-  box-sizing: border-box;
+/* Import Google Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=PT+Sans:wght@400;700&display=swap');
+
+/* Variables */
+
+:root {
+  /* colors */
+  /* primary color*/
+  --clr-primary-1: #063251;
+  /* main color */
+  --clr-secondary-5: #3fafff;
+  /* grey colors */
+  --clr-grey-1: #102a42;
+  --clr-grey-2: #617d98;
+  --clr-grey-3: #f1f5f8;
+  /* other colors */
+  --clr-white: #fff;
+  --clr-black: #222;
+  /* fonts */
+  --ff-primary: font-family: 'Open Sans', sans-serif;
+  --ff-secondary: font-family: 'PT Sans', sans-serif;
+  --spacing: 0.1rem;
+  /* shadows */
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  /* more variables */
+  --transition: all 0.3s linear;
+  --radius: 0.25rem;
+  --max-width: 1170px;
+  --fixed-width: 620px;
 }
+
+/* Global styles */
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
-}
-
-html,
-body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#container {
-  width: 400px;
-  height: 400px;
-  position: relative;
-  background: yellow;
+body {
+  font-family: var(--ff-secondary);
+  background: var(--clr-grey-3);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
 }
 
-#animate {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  background: red;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-primary);
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  /* line-height: 1.25; */
+  /* margin-bottom: 0.75rem; */
 }
 
-.box {
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 0.875rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-2);
+}
+
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+/* Navigation */
+nav {
+  background: var(--clr-white);
+  height: 3rem;
+  display: grid;
+  align-items: center;
+  box-shadow: var(--dark-shadow);
+}
+.nav-center {
+  width: 90vw;
+  max-width: var(--fixed-width);
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
+  align-items: center;
+  justify-content: space-between;
 }
+.nav-center h4 {
+  margin-bottom: 0;
+  color: var(--clr-secondary-5);
+}
+.nav-links {
+  display: flex;
+}
+nav a {
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--clr-primary-1);
+  letter-spacing: var(--spacing);
+  margin-right: 1rem;
+}
+nav a:hover {
+  color: var(--clr-secondary-5);
+}
+
+/* Container */
 
 .container {
-  max-width: 1440px;
-  margin: 0 auto 0 auto;
-  background-color: #ccc;
-  padding: 0 20px;
+  text-align: center;
+}
+.container h2 {
+  background: var(--clr-black);
+  color: var(--clr-white);
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 2.5rem;
+  box-shadow: var(--light-shadow);
+}
+.color {
+  color: var(--clr-secondary-5);
+}
+.btn-hero {
+  font-family: var(--ff-primary);
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--clr-black);
+  letter-spacing: var(--spacing);
+  display: inline-block;
+  font-weight: 700;
+  transition: var(--transition);
+  border: 2px solid var(--clr-black);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  padding: 0.75rem 1.25rem;
+}
+.btn-hero:hover {
+  color: var(--clr-white);
+  background: var(--clr-black);
 }
 
-.header {
-  background-color: lightblue;
-}
-.main {
-  background-color: yellow;
-  flex: 1 0 auto;
-}
-.footer {
-  background-color: brown;
-}
+
+/* Media Queries */
 
 /* Extra small devices (phones, 599px and down) */
 @media only screen and (max-width: 599px) {
@@ -62,6 +180,29 @@ body {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+  h1,
+  h2,
+  h3,
+  h4
+  h5,
+  h6 {
+    line-height: 1;
+  }
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
