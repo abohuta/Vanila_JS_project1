@@ -1,1 +1,1 @@
-# progect1
+# Vanila JS color flipper
