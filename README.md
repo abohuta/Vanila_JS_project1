@@ -1,1 +1,3 @@
-# Vanila JS color flipper
+# Vanila JS
+
+## simple color changer
